@@ -1,36 +1,53 @@
 <template>
-  <router-view/>
+      <div class = 'app'>
+           <div class = 'head'></div>
+           <div class = 'sect'>
+                <router-view></router-view>
+           </div>
+           <div class = 'foot'>
+                <router-link to = '/ones' class = 'li'>首页</router-link>
+                <router-link to = '/twos' class = 'li'>我的</router-link>
+           </div>
+      </div>
 </template>
+<script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+export default{
+       name:"app",
 }
-html{
-  font-size: calc(100vw/750*100)
-}
-html,body{
-  height: 100%;
-}
+</script>
+<style>
 *{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  outline: none;
+      margin:0;
+      padding:0;
+      list-style: none;
 }
-.scale-enter{
-    transform: translateX(100%);
-    opacity: 0;
+.app{
+      width:100%;
+      height:100px;
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
 }
-.scale-leave-to{
-    // transform: translateY(-100%);
-    // opacity: 0;
+.sect{
+      width:100%;
+      height:auto;
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
 }
-.scale-enter-active,.scale-leave-active{
-    transition: all .5s ease;
+.foot{
+      position: fixed;
+      bottom: 0;
+      width:100%;
+      height:40px;
+      background: pink;
+      display: flex;
+}
+.li{
+      width:50%;
+      height:40px;
+      line-height: 40px;
+      text-align: center;
 }
 </style>
